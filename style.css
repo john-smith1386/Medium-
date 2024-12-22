@@ -6,15 +6,24 @@ body {
   background-color: #f4f4f9;
 }
 
+.description {
+  text-align: center; /* Center-align the text */
+  font-size: 16px; /* Adjust size */
+  color: #555; /* Optional: soft gray color */
+  margin: 10px 0; /* Add spacing */
+  line-height: 1.5; /* Better readability */
+}
+
 .description a {
-  color: #0073e6; /* Blue color for the link */
-  text-decoration: none; /* No underline */
-  font-weight: bold; /* Make it stand out */
+  color: #0073e6; /* Link color */
+  text-decoration: none; /* Remove underline */
 }
 
 .description a:hover {
   text-decoration: underline; /* Add underline on hover */
-  color: #005bb5; /* Darker blue on hover */
+  color: #005bb5; /* Darker color on hover */
+}
+
 }
 
 .container {

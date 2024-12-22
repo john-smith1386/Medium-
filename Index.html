@@ -13,7 +13,7 @@
 		Explore how to leverage AI techniques to design and build programming language models effectively. Read more about it 
 		<a href="https://example.com/full-guide" target="_blank">in this detailed guide</a>.
 	  </p>
-	  <details>
+	  <details id="section1">
 		<summary>Charactristics of different language models</summary>
 		<div class="content">
 		  <h2>1. Python</h2>
@@ -121,7 +121,7 @@
 		  </ul>
 		</div>
 	  </details>
-	  <details>
+	  <details id="section2">
 		  <summary>Programmer challenges to use each model</summary>
 		  <div class="content">
 			<h2>1. Python</h2>
@@ -217,5 +217,18 @@
 		  </div>
 		</details>
 	</div>
+	  <!-- JavaScript -->
+  <script>
+    // Automatically expand the targeted collapsible section
+    document.addEventListener("DOMContentLoaded", () => {
+      const hash = window.location.hash; // Get the URL fragment
+      if (hash) {
+        const target = document.querySelector(hash); // Find the matching id
+        if (target && target.tagName === "DETAILS") {
+          target.setAttribute("open", ""); // Open the <details> element
+        }
+      }
+    });
+  </script>
 </body>
 </html>
