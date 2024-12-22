@@ -216,19 +216,43 @@
 			</ul>
 		  </div>
 		</details>
+			  <!-- Back to Top Button -->
+	    <div class="back-to-top" id="back-to-top">
+		↑ Back to Top
+	    </div>
 	</div>
 	  <!-- JavaScript -->
   <script>
-    // Automatically expand the targeted collapsible section
-    document.addEventListener("DOMContentLoaded", () => {
-      const hash = window.location.hash; // Get the URL fragment
-      if (hash) {
-        const target = document.querySelector(hash); // Find the matching id
-        if (target && target.tagName === "DETAILS") {
-          target.setAttribute("open", ""); // Open the <details> element
-        }
+  // Automatically expand the targeted collapsible section
+  document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash; // Get the URL fragment
+    if (hash) {
+      const target = document.querySelector(hash); // Find the matching id
+      if (target && target.tagName === "DETAILS") {
+        target.setAttribute("open", ""); // Open the <details> element
+      }
+    }
+
+    // Back to Top Button Functionality
+    const backToTop = document.getElementById("back-to-top");
+
+    // Show or hide the button based on scroll position
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.style.display = "block"; // Show the button
+      } else {
+        backToTop.style.display = "none"; // Hide the button
       }
     });
+
+    // Scroll to the top when the button is clicked
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // Smooth scrolling
+      });
+    });
+  });
   </script>
 </body>
 </html>

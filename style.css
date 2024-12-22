@@ -88,6 +88,26 @@ ul li {
   margin-bottom: 10px;
   color: #2e2e2e; /* Neutral dark gray */
 }
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #46758d; /* Teal background */
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  z-index: 1000; /* Ensure it’s above other elements */
+  text-align: center;
+}
+
+.back-to-top:hover {
+  background-color: #345867; /* Darker teal on hover */
+}
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
