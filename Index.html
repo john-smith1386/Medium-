@@ -10,8 +10,7 @@
 	<div class="container">
 	  <h1>Medium Blog: Creating a new programming language model with AI.</h1>
 	  <p class="description">
-		Explore how to leverage AI techniques to design and build programming language models effectively. Read more about it 
-		<a href="https://example.com/full-guide" target="_blank">in this detailed guide</a>.
+		This is the additional content of a Medium blog post, use this <a href="https://example.com/full-guide" target="_blank">link</a> to read the main content.
 	  </p>
 	  <details id="section1">
 		<summary>Charactristics of different language models</summary>
@@ -217,7 +216,7 @@
 		  </div>
 		</details>
 		<details id="section3">
-		  <summary>The roadmap to create new programming language</summary>
+		  <summary>The roadmap to create a new programming language</summary>
 		  <div class="content">
 			<h2>1. Define Your Core Philosophy and Goals</h2>
 			<h3>Identify the Problems You Want to Solve</h3>
@@ -372,6 +371,139 @@
 			</ul>
 		  </div>
 		</details>
+		<details id="section4">
+			<summary>The suggested language and the path forward</summary>
+			  <div class="content">
+					<h2>1. Is It Even Possible?</h2>
+					<p>Short answer: Yes, it’s possible in principle, but there are trade-offs:</p>
+					<ul>
+					  <li><strong>Natural Language Parsing Is Hard:</strong> Human language is ambiguous. For example:
+						<div class="code-block">
+				<pre><code>Sort the list and print each item</code></pre>
+						</div>
+						Does the user want ascending or descending order? Should duplicates be removed?
+					  </li>
+					  <li><strong>Context and Intent Understanding:</strong> The compiler or interpreter would need a robust way to handle incomplete or ambiguous commands. Traditional compilers expect precise syntax. A “prompt-like” language might rely on advanced parsing (potentially AI-based or rule-based) to disambiguate intent.</li>
+					  <li><strong>Simplicity vs. Power:</strong> A super-simple syntax might limit how complex a program can get. Once you need more advanced logic (e.g., concurrency, database connections, or error handling), you risk drifting away from “natural” statements and into “programming constructs.”</li>
+					</ul>
+					<p>However, we already see partial successes of this concept with domain-specific languages (DSLs) and “low-code” or “no-code” tools. These frameworks let users configure business logic with minimal syntax. So, in a sense, it’s not only possible but already happening in certain niches—just not usually labeled as a general-purpose “programming language.”</p>
+
+					<h2>2. Key Considerations for a “Prompt-Like” Language</h2>
+					<h3>Syntax vs. Natural Language</h3>
+					<ul>
+					  <li><strong>Minimal, English-like Syntax:</strong> You might define statements such as:
+						<div class="code-block">
+				<pre><code>read file "data.csv" into dataset
+				sort dataset by column "Name"
+				print dataset</code></pre>
+						</div>
+					  </li>
+					  <li><strong>Grammar and Parsing:</strong> You’d need a carefully designed grammar to interpret these lines. This grammar might be more flexible than typical languages, but still needs structure:
+						<ul>
+						  <li>Verb → Noun → Optional parameters.</li>
+						  <li>For instance: <code>read [resource] ["identifier"] [into variable]</code>.</li>
+						</ul>
+					  </li>
+					  <li><strong>Disambiguation Mechanisms:</strong> When ambiguous, the parser may:
+						<ul>
+						  <li>Prompt the user for clarification, or</li>
+						  <li>Use a “best guess” approach (e.g., default to ascending order on sort).</li>
+						</ul>
+					  </li>
+					</ul>
+
+					<h3>Error Handling and Feedback</h3>
+					<ul>
+					  <li><strong>Compiler Warnings in Plain English:</strong> If the compiler can’t parse a statement or sees a logical error, it might respond with something like:
+						<div class="code-block">
+				<pre><code>I see you tried to print a dataset called ‘datset’. Did you mean ‘dataset’?</code></pre>
+						</div>
+					  </li>
+					  <li><strong>Interactive Shell vs. Static Compiler:</strong> An interactive REPL or shell might better serve a prompt-like language because it can ask clarifying questions in real-time.</li>
+					</ul>
+
+					<h3>Performance and Resource Usage</h3>
+					<ul>
+					  <li><strong>Simplicity in Implementation:</strong> A language that uses a straightforward AST (Abstract Syntax Tree) parsing approach can be efficient. You don’t necessarily need a huge runtime or advanced JIT compiler.</li>
+					  <li><strong>Limit the Scope of the Language:</strong> Avoid implementing complex features like concurrency, heavy libraries, or sophisticated reflection if you aim to minimize resource usage. A smaller runtime footprint means less overhead.</li>
+					</ul>
+
+					<h3>Potential Use of AI</h3>
+					<ul>
+					  <li><strong>Optional AI-Driven Parsing:</strong> A large language model (LLM) or rule-based NLP engine could interpret ambiguous statements. But this might introduce heavier resource usage and dependence on an external service (unless you use a very optimized on-device model).</li>
+					  <li><strong>Offline, Lean Implementation:</strong> Alternatively, a deterministic, rule-based parser can remain lightweight, but you lose some of the “magical” intelligence AI can provide.</li>
+					</ul>
+
+					<h2>3. Conceptual Example</h2>
+					<p>Let’s imagine you define a file named <code>hello.world</code> that contains:</p>
+					<div class="code-block">
+				<pre><code>say "Hello, World!"
+				ask "What is your name?" and store answer in username
+				say "Nice to meet you, {username}!"</code></pre>
+					</div>
+					<p>How does the language handle this?</p>
+					<ul>
+					  <li><strong>Lexical Analysis:</strong> It identifies tokens like <code>say</code>, <code>ask</code>, <code>store</code>, and strings.</li>
+					  <li><strong>Parsing:</strong> It matches statements to grammar rules. For example:
+						<ul>
+						  <li><code>say "&lt;message&gt;"</code></li>
+						  <li><code>ask "&lt;prompt&gt;" and store answer in &lt;variable&gt;</code></li>
+						</ul>
+					  </li>
+					  <li><strong>Execution:</strong>
+						<ul>
+						  <li><code>say</code> prints the string to stdout.</li>
+						  <li><code>ask</code> displays a prompt, reads input, assigns it to <code>username</code>.</li>
+						  <li>The second <code>say</code> uses interpolation to print the user’s name.</li>
+						</ul>
+					  </li>
+					</ul>
+					<p>This might look like a “prompt-based” DSL. It’s very close to natural language but still restricted to a set of known patterns.</p>
+
+					<h2>4. How to Keep It Simple but Powerful</h2>
+					<h3>Limit the Language Scope</h3>
+					<ul>
+					  <li>Focus on a narrow domain (e.g., file I/O, text manipulation, basic logic and conditionals). This ensures you don’t blow up complexity with thousands of features.</li>
+					</ul>
+					<h3>Provide Good Defaults</h3>
+					<ul>
+					  <li>Whenever the user doesn’t specify details (like sort order), default to something reasonable (e.g., ascending, or lexicographical). This reduces the amount of syntax a user must learn.</li>
+					</ul>
+					<h3>Gradual Complexity</h3>
+					<ul>
+					  <li>Let advanced users opt into more “programming-like” constructs (loops, functions, conditionals). Keep them in plain-English style but well-defined:
+						<div class="code-block">
+				<pre><code>for each item in item_list
+				   say "Item: {item}"
+				end</code></pre>
+						</div>
+					  </li>
+					</ul>
+					<h3>Interactive Documentation</h3>
+					<ul>
+					  <li>Provide “built-in help” or a REPL that explains commands, like a mini-tutorial.</li>
+					  <li>Example: Typing <code>help say</code> prints usage examples.</li>
+					</ul>
+
+					<h2>5. Potential Challenges</h2>
+					<ul>
+					  <li><strong>Ambiguity:</strong> Natural language often has multiple interpretations. You’ll need to systematically handle or reduce ambiguity (e.g., “sort the list by name ascending” vs. “sort the list by name, ascending or descending?”).</li>
+					  <li><strong>Scalability:</strong> As projects grow bigger, you may need modules, packages, or some method to structure code. Maintaining a “prompt-like” style could become unwieldy.</li>
+					  <li><strong>Performance Trade-Offs:</strong> If you rely on AI-based parsing, you might introduce large model dependencies or external APIs. A purely rule-based approach is simpler but might feel “less intelligent.”</li>
+					  <li><strong>Community Adoption:</strong> Any new language faces the challenge of building an ecosystem of libraries, documentation, and tooling. Without these, it’s hard to gain traction.</li>
+					</ul>
+
+					<h2>6. Path Forward: A Feasible Strategy</h2>
+					<ul>
+					  <li><strong>Draft a Small Grammar:</strong> Start with a few key verbs: read, write, ask, say, calculate, sort, etc. Let them combine with natural-sounding phrases: <code>read file "data.csv" into dataset</code>.</li>
+					  <li><strong>Implement a Lightweight Interpreter:</strong> A simple parser that translates each statement into internal actions. Keep it in memory with minimal data structures, ensuring it’s not resource-heavy.</li>
+					  <li><strong>Offer an Interactive REPL:</strong> Let users type commands one by one. Provide immediate feedback or error messages in plain English.</li>
+					  <li><strong>Gather User Feedback:</strong> See where users stumble or want more capabilities. Gradually refine or expand the grammar.</li>
+					  <li><strong>Expand as Needed, Keep the Core Simple:</strong> Possibly add modules for specialized tasks (e.g., HTTP requests, database queries), each with their own small set of natural commands.</li>
+					</ul>
+				  </div>
+	    </details>
+
 			  <!-- Back to Top Button -->
 	    <div class="back-to-top" id="back-to-top">
 		↑ Back to Top
