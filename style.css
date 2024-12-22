@@ -1,73 +1,73 @@
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
-}
-
-.description {
-  text-align: center; /* Center-align the text */
-  font-size: 16px; /* Adjust size */
-  color: #555; /* Optional: soft gray color */
-  margin: 10px 0; /* Add spacing */
-  line-height: 1.5; /* Better readability */
-}
-
-.description a {
-  color: #0073e6; /* Link color */
-  text-decoration: none; /* Remove underline */
-}
-
-.description a:hover {
-  text-decoration: underline; /* Add underline on hover */
-  color: #005bb5; /* Darker color on hover */
-}
-
+  background-color: #faf3e0; /* Soft cream background */
 }
 
 .container {
-  max-width: 800px;
+  max-width: 90%; /* Adjust width for smaller screens */
   margin: 20px auto;
   padding: 20px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #8b5e3c; /* Warm brown for main heading */
+  font-size: 1.8rem; /* Scalable font size */
+  margin-bottom: 15px;
+}
+
+.description {
+  text-align: center;
+  font-size: 1rem; /* Base font size for descriptions */
+  color: #2e2e2e; /* Neutral dark gray */
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.description a {
+  color: #46758d; /* Muted teal for links */
+  text-decoration: none;
+}
+
+.description a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #345867; /* Darker teal on hover */
 }
 
 details {
   margin: 20px 0;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  background: #fafafa;
+  background: white;
 }
 
 details summary {
-  font-size: 20px; /* Bigger font size */
+  font-size: 1.2rem; /* Larger font size for section titles */
   font-weight: bold;
   cursor: pointer;
-  color: #28a745; /* Green color for the title */
+  color: #5f4b32; /* Darker beige for section titles */
 }
 
 details summary:hover {
-  text-decoration: underline; /* Optional: underline on hover */
+  text-decoration: underline; /* Feedback for interaction */
 }
 
 details summary:before {
-  content: "▶";
+  content: "▶"; /* Right arrow for collapsed state */
   font-size: 14px;
   margin-right: 8px;
   transition: transform 0.3s ease;
 }
 
 details[open] summary:before {
-  content: "▼";
+  content: "▼"; /* Down arrow for expanded state */
 }
 
 .content {
@@ -75,15 +75,40 @@ details[open] summary:before {
 }
 
 h2 {
-  color: #0056b3;
-  font-size: 20px;
+  color: #8b5e3c; /* Warm brown for section headings */
+  font-size: 1.4rem; /* Scalable heading size */
   margin-top: 15px;
 }
 
 ul {
-  padding-left: 20px;
+  padding-left: 25px; /* Better spacing for bullet points */
 }
 
 ul li {
   margin-bottom: 10px;
+  color: #2e2e2e; /* Neutral dark gray */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem; /* Slightly smaller heading for mobile */
+  }
+
+  .description {
+    font-size: 0.9rem; /* Adjust description size */
+    margin: 10px 0;
+  }
+
+  details summary {
+    font-size: 1rem; /* Adjust section title size */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Adjust heading size for mobile */
+  }
+
+  ul {
+    padding-left: 20px; /* Reduce bullet point indentation */
+  }
 }
