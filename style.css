@@ -49,9 +49,14 @@ details {
 }
 
 details summary {
-  font-size: 18px;
+  font-size: 20px; /* Bigger font size */
   font-weight: bold;
   cursor: pointer;
+  color: #28a745; /* Green color for the title */
+}
+
+details summary:hover {
+  text-decoration: underline; /* Optional: underline on hover */
 }
 
 details summary:before {
