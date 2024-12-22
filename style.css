@@ -6,6 +6,17 @@ body {
   background-color: #f4f4f9;
 }
 
+.description a {
+  color: #0073e6; /* Blue color for the link */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Make it stand out */
+}
+
+.description a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  color: #005bb5; /* Darker blue on hover */
+}
+
 .container {
   max-width: 800px;
   margin: 20px auto;

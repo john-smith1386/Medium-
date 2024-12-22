@@ -8,9 +8,13 @@
 </head>
 <body>
 	<div class="container">
-	  <h1>Programming Languages and Characteristics</h1>
+	  <h1>Medium Blog: Creating a new programming language model with AI.</h1>
+	  <p class="description">
+		Explore how to leverage AI techniques to design and build programming language models effectively. Read more about it 
+		<a href="https://example.com/full-guide" target="_blank">in this detailed guide</a>.
+	  </p>
 	  <details>
-		<summary>Click to Expand</summary>
+		<summary>Charactristics of different language models</summary>
 		<div class="content">
 		  <h2>1. Python</h2>
 		  <ul>
@@ -117,6 +121,101 @@
 		  </ul>
 		</div>
 	  </details>
+	  <details>
+		  <summary>Programmer Challenges to use</summary>
+		  <div class="content">
+			<h2>1. Python</h2>
+			<ul>
+			  <li><strong>Slower for CPU-Intensive Tasks:</strong> Python is slower compared to lower-level languages like C or C++.</li>
+			  <li><strong>The Global Interpreter Lock (GIL):</strong> Limits true parallelism in multi-threaded, CPU-bound tasks.</li>
+			  <li><strong>Dynamic Typing Pitfalls:</strong> Type mismatch errors only appear at runtime, making debugging harder.</li>
+			</ul>
+
+			<h2>2. JavaScript</h2>
+			<ul>
+			  <li><strong>Fragmented Ecosystem and Tooling:</strong> Rapidly changing libraries and frameworks can lead to “JavaScript fatigue.”</li>
+			  <li><strong>Browser Inconsistencies:</strong> Different browsers have historically implemented JavaScript features differently.</li>
+			  <li><strong>Asynchronous Complexity:</strong> Handling callbacks, promises, and async/await properly can be tricky.</li>
+			</ul>
+
+			<h2>3. Java</h2>
+			<ul>
+			  <li><strong>Verbose Syntax:</strong> Boilerplate code (getters, setters, etc.) and class-based structure can feel heavy compared to more concise languages.</li>
+			  <li><strong>Long Startup Times and Memory Usage:</strong> The JVM can have higher memory overhead, and startup can be slower than compiled languages like C++ or Rust.</li>
+			  <li><strong>Backward Compatibility and Legacy Code:</strong> Maintaining older codebases can mean dealing with large amounts of legacy infrastructure and libraries.</li>
+			</ul>
+
+			<h2>4. C</h2>
+			<ul>
+			  <li><strong>Manual Memory Management:</strong> Managing memory (malloc, free) and dealing with pointers can be error-prone, leading to memory leaks or segmentation faults.</li>
+			  <li><strong>Lack of Modern Abstractions:</strong> No built-in object orientation, generics, or advanced language features found in newer languages.</li>
+			  <li><strong>Debugging Complexity:</strong> Diagnosing pointer and buffer overflow errors can be challenging, especially in large codebases.</li>
+			</ul>
+
+			<h2>5. C++</h2>
+			<ul>
+			  <li><strong>Complex Language Features:</strong> Templates, multiple inheritance, operator overloading, and other advanced features add complexity.</li>
+			  <li><strong>Long Compile Times:</strong> Big C++ projects can have significant build times due to templates and header inclusion.</li>
+			  <li><strong>Manual Resource Management:</strong> Although smart pointers help, memory management issues can still occur.</li>
+			</ul>
+
+			<h2>6. C#</h2>
+			<ul>
+			  <li><strong>Platform/Framework Lock-In (Historically):</strong> Originally tied heavily to the Windows ecosystem; although .NET is now open source and cross-platform, many older projects are still Windows-centric.</li>
+			  <li><strong>Large Frameworks and Versions:</strong> The .NET environment has various versions and frameworks (Framework vs .NET Core vs .NET 5/6+), which can lead to confusion or compatibility issues.</li>
+			  <li><strong>Resource Requirements:</strong> Like Java, C# applications running on .NET can have higher memory footprints compared to native languages like C or C++.</li>
+			</ul>
+
+			<h2>7. PHP</h2>
+			<ul>
+			  <li><strong>Inconsistent Language Design:</strong> Historically, function naming and parameter orders can feel inconsistent (e.g., array_filter, array_map, etc.).</li>
+			  <li><strong>Performance and Security Concerns:</strong> Older versions of PHP were less efficient. Security best practices often weren’t followed in legacy code (e.g., outdated tutorials).</li>
+			  <li><strong>Reliance on Shared Hosting:</strong> A positive (easy deployment) can also be a negative when dealing with older or restricted hosting environments.</li>
+			</ul>
+
+			<h2>8. Ruby</h2>
+			<ul>
+			  <li><strong>Performance Constraints:</strong> Generally slower compared to compiled languages or even some other interpreted languages (like newer versions of Python with JITs).</li>
+			  <li><strong>Concurrency Model:</strong> Ruby’s “green threads” in MRI (CRuby) can limit true parallelism. Alternative implementations (JRuby) exist but are less common.</li>
+			  <li><strong>Evolving Versions and Smaller Ecosystem (Outside of Rails):</strong> Ruby is heavily associated with Rails; outside that framework, it’s less prevalent.</li>
+			</ul>
+
+			<h2>9. Swift</h2>
+			<ul>
+			  <li><strong>Evolving Language:</strong> Swift has had frequent and sometimes breaking changes, especially in its early years, leading to version compatibility issues.</li>
+			  <li><strong>Apple Ecosystem Lock-In:</strong> Primarily used for iOS and macOS; although it’s open source and can run on Linux, it’s still largely driven by Apple’s platform development.</li>
+			  <li><strong>Limited Cross-Platform Support:</strong> Outside of Apple platforms, Swift adoption is still comparatively small.</li>
+			</ul>
+
+			<h2>10. Kotlin</h2>
+			<ul>
+			  <li><strong>Ecosystem Not as Mature as Java (Yet):</strong> While Kotlin is fully interoperable with Java, some libraries and tools are still Java-centric, or have incomplete Kotlin DSLs.</li>
+			  <li><strong>Slower Compilation Times (Compared to Java):</strong> Kotlin’s more advanced features (like inline functions, lambdas) sometimes introduce extra compile-time overhead.</li>
+			  <li><strong>Learning Curve from Java:</strong> Though Kotlin is simpler in many respects, developers used to Java’s verbosity need time to adapt.</li>
+			</ul>
+
+			<h2>11. Go (Golang)</h2>
+			<ul>
+			  <li><strong>Minimalism Can Be Restrictive:</strong> Lack of generics (pre-Go 1.18) meant more repetitive code. Even with generics now, the design is intentionally simplified, which may feel limiting for some.</li>
+			  <li><strong>Error Handling Verbosity:</strong> Go relies heavily on explicit error checks (e.g., if err != nil) which can feel cumbersome.</li>
+			  <li><strong>Concurrency Pitfalls:</strong> Goroutines are easy to start but can be overlooked in terms of resource usage, leading to potential memory leaks if not managed properly.</li>
+			</ul>
+
+			<h2>12. Rust</h2>
+			<ul>
+			  <li><strong>Steep Learning Curve:</strong> The borrow checker and strict type system can be difficult for beginners or developers coming from garbage-collected languages.</li>
+			  <li><strong>Long Compilation Times:</strong> Rust’s compiler does extensive checks, which results in safer code but slower build times, especially for large projects.</li>
+			  <li><strong>Relatively Young Ecosystem:</strong> While growing quickly, Rust does not have the decades of libraries that languages like C/C++ or Java do, so certain domains may still have limited library support.</li>
+			</ul>
+
+			<h2>13. TypeScript</h2>
+			<ul>
+			  <li><strong>Configuration Complexity:</strong> Requires a build/compile step (tsconfig.json), which can be daunting for newcomers.</li>
+			  <li><strong>Definition Files for Third-Party JS Libraries:</strong> Even though DefinitelyTyped helps with type definitions, mismatched or incomplete typings can cause friction.</li>
+			  <li><strong>Advanced Type Features Are Complex:</strong> Generics, mapped types, and advanced type utilities can become very complicated, making type errors difficult to debug.</li>
+			</ul>
+		  </div>
+		</details>
 	</div>
 </body>
 </html>
